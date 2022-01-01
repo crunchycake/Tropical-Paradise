@@ -151,9 +151,11 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background-image: .header blue-gradient, url("../img/palm-mini.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url(../img/palm-mini.jpg);
+  background-attachment: scroll;
+}
+
+.header__heading {
+  font-family: 'Dancing Script';
 }
 /*# sourceMappingURL=main.css.map */
