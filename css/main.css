@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
@@ -32,9 +34,40 @@ body {
   border-radius: 8px;
 }
 
+.burger-btn:hover .burger-btn__bars::after,
+.burger-btn:hover .burger-btn__bars::before {
+  width: 100%;
+}
+
 .burger-btn__box {
   position: relative;
   width: 40px;
   height: 30px;
+}
+
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+  position: absolute;
+  right: 0;
+  height: 3px;
+  content: '';
+  background-color: #fff;
+  -webkit-transition: width .3;
+  transition: width .3;
+}
+
+.burger-btn__bars {
+  width: 100%;
+}
+
+.burger-btn__bars::after {
+  top: 13px;
+  width: 60%;
+}
+
+.burger-btn__bars::before {
+  top: 27px;
+  width: 30%;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 /*# sourceMappingURL=main.css.map */
