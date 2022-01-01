@@ -151,7 +151,7 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background-image: .header blue-gradient, url("/palm-mini.jpg");
+  background-image: .header blue-gradient, url("../img/palm-mini.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
