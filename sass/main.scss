@@ -84,6 +84,5 @@ body {
 	height: 75vh;
 	text-align: center;
 	color: $pure-white;
-	@include heroImages('../img/palm-mini.jpg');
-    
+	@include heroImages('../img/palm-mini.jpg')
 }
