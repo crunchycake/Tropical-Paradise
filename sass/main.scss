@@ -86,11 +86,36 @@ body {
 	color: $pure-white;
 
 	background: $blue-gradient, url(../img/palm-mini.jpg);
+	background-size: cover;
+	background-position: center;
 	background-attachment: scroll;
 	// @include heroImages('../img/palm-mini.jpg')
 
 	&__heading {
-		font-family: 'Dancing Script';
+		font-family: 'Dancing Script', cursive;
+		font-size: 4.8rem;
+		font-weight: 300;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+	}
+
+	&__btn {
+		margin-top: 2em;
+		padding: 0.8em 1.6em;
+		font-size: 1.4rem;
+		background: $pure-white;
+		border: none;
+		border-radius: 8px;
+		color: $dark;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&::before {
+			background-color: $light-white;
+		}
 	}
 
 }
