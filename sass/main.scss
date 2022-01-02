@@ -81,7 +81,7 @@ body {
 	height: 100vh;
 	width: 100%;
 	transform: translateX(100%);
-	transition: .5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 	background-image: $blue-gradient-solid;
 	z-index: 100;
 
@@ -116,8 +116,20 @@ body {
 	}
 }
 
-// HEADER
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
 
+.nav-items-animation {
+	animation: navItemsAnimation 1s both;
+}
+
+// HEADER
 .header {
 	position: relative;
 	display: flex;
@@ -129,10 +141,6 @@ body {
 	text-align: center;
 	color: $pure-white;
 
-	// background: $blue-gradient, url(../img/palm-mini.jpg);
-	// background-size: cover;
-	// background-position: center;
-	// background-attachment: scroll;
 	@include heroImages('../img/palm-mini.jpg') &__heading {
 		font-family: 'Dancing Script', cursive;
 		font-size: 4.8rem;
@@ -161,7 +169,58 @@ body {
 	}
 }
 
+// MAIN
+// DREAMS SECTION
+
+.dreams {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+	}
+
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+	}
+}
+
 // MEDIA
+
+@media (min-width: 576px) {
+	.dreams {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				width: 55%;
+				&--right {
+					text-align: right;
+				}
+			}
+			&-img {
+				width: 40%;
+
+				&--right {
+					order: 1;
+				}
+			}
+		}
+		&__img {
+			margin-bottom: 0;
+			max-height: 300px;
+		}
+	}
+}
 
 @media (min-width: 760px) {
 	.white-block {
@@ -181,6 +240,12 @@ body {
 			font-size: 1.6rem;
 		}
 	}
+
+	.dreams {
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -194,6 +259,32 @@ body {
 
 		&__heading {
 			font-size: 10rem;
+		}
+	}
+
+	.nav {
+		&__item {
+			font-size: 4.8rem;
+		}
+	}
+
+	.dreams {
+		&__box {
+			margin: 5em 0;
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-bottom: 2.5em;
+			}
+		}
+		&__title {
+			font-size: 3.6rem;
+		}
+
+		&__text {
+			font-size: 2.2rem;
 		}
 	}
 }
