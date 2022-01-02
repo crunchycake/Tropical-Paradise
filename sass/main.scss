@@ -72,6 +72,44 @@ body {
 	}
 }
 
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-image: $blue-gradient-solid;
+	z-index: 100;
+
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		color: $pure-white;
+		text-decoration: none;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			background-color: $pure-white;
+			transform: scaleY(0);
+			transition: transform 0.3s;
+			content: '';
+		}
+
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
 // HEADER
 
 .header {
@@ -85,13 +123,11 @@ body {
 	text-align: center;
 	color: $pure-white;
 
-	background: $blue-gradient, url(../img/palm-mini.jpg);
-	background-size: cover;
-	background-position: center;
-	background-attachment: scroll;
-	// @include heroImages('../img/palm-mini.jpg')
-
-	&__heading {
+	// background: $blue-gradient, url(../img/palm-mini.jpg);
+	// background-size: cover;
+	// background-position: center;
+	// background-attachment: scroll;
+	@include heroImages('../img/palm-mini.jpg') &__heading {
 		font-family: 'Dancing Script', cursive;
 		font-size: 4.8rem;
 		font-weight: 300;
@@ -117,5 +153,41 @@ body {
 			background-color: $light-white;
 		}
 	}
+}
 
+// MEDIA
+
+@media (min-width: 760px) {
+	.white-block {
+		height: 50px;
+		width: 45%;
+	}
+
+	.header {
+		&__heading {
+			font-size: 6.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
+		}
+
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		top: 50px;
+		right: 50px;
+	}
+
+	.header {
+		background-image: $blue-gradient url(../img/palm-big.jpg);
+
+		&__heading {
+			font-size: 10rem;
+		}
+	}
 }

@@ -133,6 +133,55 @@ body {
           transition-delay: 0.1s;
 }
 
+.nav {
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(45deg, #1469f1, #2a0ab8);
+  z-index: 100;
+}
+
+.nav__item {
+  position: relative;
+  display: block;
+  margin: 0.5em 0;
+  padding: 0.5em 2em;
+  font-size: 2.8rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  content: '';
+}
+
+.nav__item:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -152,10 +201,10 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url(../img/palm-mini.jpg);
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/palm-mini.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 .header__heading {
@@ -183,5 +232,34 @@ body {
 
 .header__btn::before {
   background-color: #eee;
+}
+
+@media (min-width: 760px) {
+  .white-block {
+    height: 50px;
+    width: 45%;
+  }
+  .header__heading {
+    font-size: 6.6rem;
+  }
+  .header__text {
+    font-size: 2.2rem;
+  }
+  .header__btn {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .burger-btn {
+    top: 50px;
+    right: 50px;
+  }
+  .header {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)) url(../img/palm-big.jpg);
+  }
+  .header__heading {
+    font-size: 10rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
