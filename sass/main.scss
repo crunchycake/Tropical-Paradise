@@ -141,7 +141,9 @@ body {
 	text-align: center;
 	color: $pure-white;
 
-	@include heroImages('../img/palm-mini.jpg') &__heading {
+	@include heroImages('../img/palm-mini.jpg');
+
+	&__heading {
 		font-family: 'Dancing Script', cursive;
 		font-size: 4.8rem;
 		font-weight: 300;
@@ -193,6 +195,27 @@ body {
 	}
 }
 
+//HERO IMG
+
+.hero-img {
+	position: relative;
+	padding: 10em 2em;
+	@include heroImages('../img/polynesia-mini.jpg');
+	text-align: center;
+	color: $pure-white;
+	overflow: hidden;
+
+	&__title {
+		font-family: 'Dancing Script', cursive;
+		margin-bottom: 0.5em;
+		font-size: 4.8rem;
+	}
+
+	&__text {
+		padding: 1em 0;
+	}
+}
+
 // MEDIA
 
 @media (min-width: 576px) {
@@ -222,7 +245,7 @@ body {
 	}
 }
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
 	.white-block {
 		height: 50px;
 		width: 45%;
@@ -244,6 +267,19 @@ body {
 	.dreams {
 		&__text {
 			font-size: 1.8rem;
+		}
+	}
+
+	.hero-img {
+		padding: 30rem 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+
+		&__text {
+			font-size: 2.2rem;
 		}
 	}
 }
@@ -270,7 +306,7 @@ body {
 
 	.dreams {
 		&__box {
-			margin: 5em 0;
+			margin: 7em 0;
 
 			&-text {
 				display: flex;
@@ -285,6 +321,20 @@ body {
 
 		&__text {
 			font-size: 2.2rem;
+		}
+	}
+
+	.hero-img {
+		padding: 40rem 2em;
+		background-image: $blue-gradient, url('../img/polynesia-big.jpg');
+
+		&__title {
+			font-size: 7.2rem;
+		}
+
+		hr {
+			width: 60%;
+			max-width: 900px;
 		}
 	}
 }
