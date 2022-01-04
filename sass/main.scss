@@ -344,7 +344,7 @@ body {
 
 		&-img {
 			width: 100%;
-			transition: transform .3s;
+			transition: transform 0.3s;
 
 			&:hover {
 				transform: scale(1.1);
@@ -376,9 +376,12 @@ body {
 			border: none;
 			border-radius: 8px;
 			cursor: pointer;
+
+			&::before {
+				background-color: $secondary-color;
+			}
+		}
 	}
-
-
 }
 
 // MEDIA
