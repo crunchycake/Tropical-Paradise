@@ -353,6 +353,8 @@ body {
 
 		&-info {
 			padding: 2em;
+			background-color: $pure-white;
+			z-index: 10;
 		}
 
 		&-heading {
@@ -409,6 +411,38 @@ body {
 		&__img {
 			margin-bottom: 0;
 			max-height: 300px;
+		}
+	}
+
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: auto;
+
+				&--right {
+					order: 1;
+				}
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			&-heading {
+				margin-bottom: 0.5em;
+				font-size: 3.6rem;
+			}
+
+			&-btn {
+				padding: 1em;
+			}
 		}
 	}
 }
@@ -517,6 +551,24 @@ body {
 			width: 60%;
 			max-width: 900px;
 		}
+	}
+
+	.offers {
+		background-image: $blue-gradient, url('../img/maldives-big.jpg');
+
+		&__option {
+			&-img {
+				object-fit: cover;
+				height: 300px;
+			}
+		}
+
+		&-text {
+			font-size: 1.5rem;
+		}
+
+
+
 	}
 }
 
