@@ -1,9 +1,15 @@
 const nav = document.querySelector('.nav')
 const navBtn = document.querySelector('.burger-btn')
 const allNavItems = document.querySelectorAll('.nav__item')
+const navBtnBars = document.querySelector('.burger-btn__bars')
+const allSections = document.querySelectorAll('.section')
+const footYear = document.querySelector('.footer__year')
+
 
 const handleNav = () => {
 	nav.classList.toggle('nav--active')
+
+    navBtnBars.classList.remove('black-bars-color')
 
 	allNavItems.forEach(item => {
 		item.addEventListener('click', () => {
@@ -24,6 +30,24 @@ const handleNavItemsAnimation = () => {
     })
 }
 
+const handleObserver = () => {
+    const currentSection = window.scrollY;
 
+    allSections.forEach(section => {
 
-navBtn.addEventListener('click', handleNav)
+        if(section.classList.contains('white-section') && section.offsetTop <= currentSection + 60) {
+            navBtnBars.classList.add('black-bars-color')
+        } else if (!section.classList.contains('white-section') && section.offsetTop) {
+            navBtnBars.classList.remove('black-bars-color')
+        }
+
+    })
+}
+
+const handleCurrentYear = () => {
+    const year = (new Date).getFullYear();
+    footYear.innerText = year;
+}
+handleCurrentYear();
+navBtn.addEventListener('click', handleNav);
+window.addEventListener('scroll', handleObserver)
